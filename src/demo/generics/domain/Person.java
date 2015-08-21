@@ -3,7 +3,7 @@ package demo.generics.domain;
 /**
  * Created by Atkalikar on 20-08-2015.
  */
-public class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
 
@@ -34,5 +34,10 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return this.getAge() - o.getAge();
     }
 }
